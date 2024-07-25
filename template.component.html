@@ -1,0 +1,6 @@
+<input type="text" placeholder="Enter email" #e value="abc@gmail.com">
+<button (click)="updateEmail(e.value)">update</button>
+<div #d class="one" id="special">{{email}}</div>
+
+<div>{{d.classList}}</div>
+<div>{{d.id}}</div>

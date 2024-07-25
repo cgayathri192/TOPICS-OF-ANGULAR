@@ -1,0 +1,60 @@
+<!-- ngIf -->
+<h1 *ngIf="show">This is heading</h1>
+<!-- end for ngIf -->
+
+<!-- ngFor -->
+<table>
+    <tr *ngFor="let m of movies">
+       <td>{{m}}</td>
+    </tr>
+</table>
+<!-- NgFor -->
+
+<!-- ngIf -->
+<h1 *ngIf="showHead">This is a directive</h1>
+<h2 *ngIf="0">This is a directive</h2>
+<h3 *ngIf="!data; then load; else sample">loading ............</h3>
+<ng-template #sample>
+{{data}}
+</ng-template>
+<ng-template #load>
+    loading...
+    </ng-template>
+<!-- End for ngIf -->
+
+<!-- ngFor -->
+<p *ngFor="let n of nums">paragraph {{n}}</p>
+<p *ngFor="let m of mobiles;index as i">hI {{m}} {{i+1}}</p>
+<table>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>price</td>
+        <td>ram</td>
+        <td>storage</td>
+        
+    </tr>
+    <tr *ngFor="let m  of mobiles">
+        <!-- <td>
+            data {{n}} {{i+1}}
+        </td> -->
+        <td>{{m.id}}</td>
+        <td>{{m.name}}</td>
+        <td>{{m.price}}</td>
+        <td>{{m.ram}}</td>
+        <td>{{m.storage}}</td>
+        
+    </tr>
+</table>
+<!-- End for ngFor -->
+
+<!-- ngSwitch -->
+<input type="text" [(ngModel)]="op">
+<div [ngSwitch]="op">
+  <div *ngSwitchCase="'+'">{{num1}}+{{num2}}={{num1+num2}}</div>
+  <div *ngSwitchCase="'-'">{{num1}}-{{num2}}={{num1-num2}}</div>
+  <div *ngSwitchCase="'*'">{{num1}}*{{num2}}={{num1*num2}}</div>
+  <div *ngSwitchCase="'/'">{{num1}}/{{num2}}={{num1/num2}}</div>
+  <div *ngSwitchDefault="'+'">Invalid match</div>
+</div>
+<!-- End for ngSwitch -->

@@ -1,0 +1,40 @@
+<!-- stringInterpolation -->
+<h1>{{city}}</h1>
+<h2 class="{{cname}}">This is a heading</h2>
+<h3>{{d}}</h3>
+<!-- End for stringInterpolation -->
+
+<!-- propertyBinding -->
+Name: <input type="text">
+ <input type="number" [hidden]="ishidden">
+<button [disabled]="isdisabled">Submit</button>
+<!-- End for propertyBinding -->
+
+<!-- classBinding -->
+<h1 [class]="isactive?'active':'inactive'">This is heading</h1>
+<h1 [class]="{c1:applyc1,active:isactive}">This is a heading</h1>
+<h1 [class]="['c1','active']">Hi</h1>  
+<h2 [class.active] = isactive>Hello</h2>
+<!-- End for classBinding -->
+
+<!-- styleBinding -->
+<h1 style="color:red">How are you</h1>
+<h2 [style]="{color:cvar}">good</h2>
+<h3 [style.color]="cvar">hi</h3>
+<h4 [style]="mystyle">Hello</h4>
+<h3 [style.color]="hasError?'red':'green'">Hi</h3>
+<!-- End for styleBinding -->
+
+<!-- EventBinding -->
+<button (click)="increment()">Increment</button>
+<button (click)="decrement()">Decrement</button>
+<h1>counter:{{counter}}</h1>
+Name:<input type="text" (input)="changeName($event)">
+<h1>Your Name:{{name}}</h1>
+<!-- End for EventBinding -->
+
+<!-- TwowayDatabinding -->
+city1:<input type="text" [(ngModel)] = "city1">
+<P>{{city1}}</P>
+<button (click)="updatecity1()">update</button>
+<!-- End for TwowayDatabinding -->
